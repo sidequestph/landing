@@ -8,49 +8,50 @@ import { useToast } from '@/components/ui/use-toast';
 
 const plans = [
   {
-    name: 'Starter',
-    originalPrice: '$3,999',
-    price: '$2,999',
+    name: 'Scout',
+    originalPrice: '₱40,995.00',
+    price: '₱34,995.00',
     description: 'Perfect for indie developers',
     features: [
-      'Single page application',
-      'Responsive design',
-      'Basic animations',
-      '1 month support',
-      'SEO optimization'
+      '1-5 Website Pages (Static)',
+      '1 Revision',
+      'Resource/s: Dev, QA & BA',
+      'User Acceptance Testing',
+      'Free production setup',
+      'Responsive design (Web & Mobile Android/iOS)',
+      'Website Maintenance (1 month free after turnover)'
     ],
     highlighted: false
   },
   {
-    name: 'Pro',
-    originalPrice: '$7,999',
-    price: '$5,999',
+    name: 'Adventurer',
+    originalPrice: '₱49,995.00',
+    price: '₱44,995.00',
     description: 'For growing gaming studios',
     features: [
-      'Multi-page application',
-      'Advanced animations',
-      'Custom integrations',
-      'API development',
-      '3 months support',
-      'Performance optimization',
-      'Analytics dashboard'
+      'up to 15 Website Pages (Static)',
+      '2 Revision',
+      'Resource/s: Sr. Dev, QA & BA',
+      'User Acceptance Testing',
+      'Free production setup',
+      'Responsive design (Web & Mobile Android/iOS)',
+      'Website Maintenance (1 month free after turnover)'
     ],
     highlighted: true
   },
   {
-    name: 'Ultimate',
-    originalPrice: '$15,999',
-    price: '$12,999',
+    name: 'Legend',
+    originalPrice: '₱59,995.00',
+    price: '₱54,995.00',
     description: 'Enterprise gaming solutions',
     features: [
-      'Full platform development',
-      'Mobile app included',
-      'Real-time features',
-      'Payment integration',
-      '6 months support',
-      'Custom backend',
-      'Dedicated dev team',
-      'Priority support'
+      'up to 20 Website Pages (Static)',
+      '3 Revision',
+      'Resource/s: Sr. Dev, QA & BA',
+      'User Acceptance Testing',
+      'Free production setup',
+      'Responsive design (Web & Mobile Android/iOS)',
+      'Website Maintenance (1 month free after turnover)'
     ],
     highlighted: false
   }
