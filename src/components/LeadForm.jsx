@@ -4,6 +4,10 @@ import ArcadeCard from '@/components/ui/ArcadeCard';
 import ArcadeButton from '@/components/ui/ArcadeButton';
 import NeonText from '@/components/ui/NeonText';
 import PixelSprite from '@/components/ui/PixelSprite';
+import FloatingImage from '@/components/ui/FloatingImage';
+import starImg from '@/assets/images/star.png';
+import shieldImg from '@/assets/images/shield.png';
+import swordImg from '@/assets/images/sword.png';
 import { useToast } from '@/components/ui/use-toast';
 import { Trophy } from 'lucide-react';
 
@@ -70,6 +74,23 @@ const LeadForm = () => {
     <section id="lead-form" className="py-24 bg-gradient-to-b from-[#0A0E27] to-[#1a0f3e] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
+      <FloatingImage 
+        src={swordImg} 
+        alt="Sword" 
+        className="w-16 bottom-20 left-[15%] opacity-30 rotate-[-15deg]" 
+        delay={0.8}
+        duration={3}
+        rotation={-10}
+      />
+      <FloatingImage 
+        src={shieldImg} 
+        alt="Shield" 
+        className="w-16 top-10 right-[15%] opacity-30 rotate-[15deg]" 
+        delay={1.2}
+        duration={4}
+        rotation={10}
+      />
+
       {/* Decorative Sprites */}
       <div className="absolute top-10 left-10 opacity-50">
         <PixelSprite type="coin" />

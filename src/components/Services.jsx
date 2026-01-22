@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ArcadeCard from '@/components/ui/ArcadeCard';
 import NeonText from '@/components/ui/NeonText';
+import FloatingImage from '@/components/ui/FloatingImage';
+import swordImg from '@/assets/images/sword.png';
+import shieldImg from '@/assets/images/shield.png';
 import { Code2, Smartphone } from 'lucide-react';
 
 const services = [
@@ -25,6 +28,23 @@ const Services = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-[#0A0E27] to-[#1a0f3e] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
+      
+      <FloatingImage 
+        src={shieldImg} 
+        alt="Shield" 
+        className="w-24 md:w-32 top-10 left-[5%] opacity-10" 
+        delay={0.5}
+        duration={5}
+        rotation={15}
+      />
+      <FloatingImage 
+        src={swordImg} 
+        alt="Sword" 
+        className="w-24 md:w-32 bottom-20 right-[5%] opacity-10 rotate-[-15deg]" 
+        delay={1.2}
+        duration={4}
+        rotation={-10}
+      />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

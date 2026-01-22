@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import ArcadeCard from '@/components/ui/ArcadeCard';
 import ArcadeButton from '@/components/ui/ArcadeButton';
 import NeonText from '@/components/ui/NeonText';
+import FloatingImage from '@/components/ui/FloatingImage';
+import swordImg from '@/assets/images/sword.png';
+import shieldImg from '@/assets/images/shield.png';
 import { ExternalLink } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -30,6 +33,23 @@ const Portfolio = () => {
     <section className="py-24 bg-[#0A0E27] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
+      <FloatingImage 
+        src={swordImg} 
+        alt="Sword" 
+        className="w-24 md:w-32 bottom-20 right-[5%] opacity-10" 
+        delay={1.5}
+        duration={6}
+        rotation={-15}
+      />
+      <FloatingImage 
+        src={shieldImg} 
+        alt="Shield" 
+        className="w-24 md:w-32 top-10 left-[5%] opacity-10 rotate-[20deg]" 
+        delay={0.8}
+        duration={5}
+        rotation={10}
+      />
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

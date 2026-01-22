@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import ArcadeButton from '@/components/ui/ArcadeButton';
 import NeonText from '@/components/ui/NeonText';
 import PixelSprite from '@/components/ui/PixelSprite';
+import FloatingImage from '@/components/ui/FloatingImage';
+import swordImg from '@/assets/images/sword.png';
+import shieldImg from '@/assets/images/shield.png';
+
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -16,6 +20,22 @@ const Hero = () => {
 
       {/* Pixel Pattern Overlay */}
       <div className="absolute inset-0 z-0 opacity-10 pixel-pattern"></div>
+
+      {/* Floating Background Objects */}
+      <FloatingImage 
+        src={swordImg} 
+        alt="Sword" 
+        className="w-32 md:w-48 top-20 right-[10%] rotate-45 z-0" 
+        delay={0}
+        duration={4}
+      />
+      <FloatingImage 
+        src={shieldImg} 
+        alt="Shield" 
+        className="w-24 md:w-36 bottom-32 left-[15%] z-0" 
+        delay={1}
+        duration={3}
+      />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">

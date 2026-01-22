@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ArcadeCard from '@/components/ui/ArcadeCard';
 import NeonText from '@/components/ui/NeonText';
+import FloatingImage from '@/components/ui/FloatingImage';
+import starImg from '@/assets/images/star.png';
+import shieldImg from '@/assets/images/shield.png';
+import swordImg from '@/assets/images/sword.png';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const testimonials = [
   {
     name: 'Alex Thunder',
     company: 'Lightning Games Studio',
-    quote: 'Arcade Dev Studio took our mobile game to the next level! Their attention to detail and arcade-style polish made all the difference. Our downloads increased 300%!',
+    quote: 'Sidequest PH took our mobile game to the next level! Their attention to detail and arcade-style polish made all the difference. Our downloads increased 300%!',
     rating: 5,
     avatar: 'AT'
   },
@@ -42,6 +46,22 @@ const Testimonials = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-[#1a0f3e] to-[#0A0E27] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
+      
+      <FloatingImage 
+        src={shieldImg} 
+        alt="Shield" 
+        className="w-20 top-20 left-[10%] opacity-20" 
+        delay={0.2}
+        duration={4}
+      />
+      <FloatingImage 
+        src={swordImg} 
+        alt="Sword" 
+        className="w-24 bottom-10 right-[10%] opacity-20 rotate-[30deg]" 
+        delay={1.0}
+        duration={5}
+        rotation={20}
+      />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
