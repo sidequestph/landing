@@ -8,8 +8,8 @@ import { useToast } from '@/components/ui/use-toast';
 import { Trophy } from 'lucide-react';
 
 const LeadForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '' });
-  const [errors, setErrors] = useState({ name: '', email: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -95,7 +95,7 @@ const LeadForm = () => {
           <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             ENTER YOUR NAME
           </NeonText>
-          <p className="text-gray-300 text-lg">Join the arcade and start your quest</p>
+          <p className="text-gray-300 text-lg">Start the quest for global impact and levelup your business</p>
         </motion.div>
 
         <motion.div
@@ -109,8 +109,8 @@ const LeadForm = () => {
             <div className="p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-white font-bold mb-2 text-sm uppercase tracking-wide">
-                    Player Name
+                  <label className="block text-white font-bold mb-2 text-sm tracking-wide">
+                    Full name
                   </label>
                   <input
                     type="text"
@@ -120,7 +120,7 @@ const LeadForm = () => {
                     className={`w-full px-4 py-3 bg-[#0A0E27] border-2 ${
                       errors.name ? 'border-red-500' : 'border-[#9D4EDD]'
                     } rounded pixel-box text-white focus:outline-none focus:border-[#9D4EDD] focus:arcade-glow transition-all duration-300`}
-                    placeholder="Enter your name..."
+                    placeholder="e.g Juan De La Cruz"
                   />
                   {errors.name && (
                     <motion.p
@@ -135,8 +135,8 @@ const LeadForm = () => {
                 </div>
 
                 <div>
-                  <label className="block text-white font-bold mb-2 text-sm uppercase tracking-wide">
-                    Email Address
+                  <label className="block text-white font-bold mb-2 text-sm tracking-wide">
+                    Email
                   </label>
                   <input
                     type="email"
@@ -146,7 +146,7 @@ const LeadForm = () => {
                     className={`w-full px-4 py-3 bg-[#0A0E27] border-2 ${
                       errors.email ? 'border-red-500' : 'border-[#9D4EDD]'
                     } rounded pixel-box text-white focus:outline-none focus:border-[#9D4EDD] focus:arcade-glow transition-all duration-300`}
-                    placeholder="your@email.com"
+                    placeholder="e.g juan@delacruz.com"
                   />
                   {errors.email && (
                     <motion.p
@@ -156,6 +156,32 @@ const LeadForm = () => {
                       style={{ textShadow: '0 0 10px rgba(239, 68, 68, 0.5)' }}
                     >
                       ⚠️ {errors.email}
+                    </motion.p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-white font-bold mb-2 text-sm tracking-wide">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="4"
+                    className={`w-full px-4 py-3 bg-[#0A0E27] border-2 ${
+                      errors.message ? 'border-red-500' : 'border-[#9D4EDD]'
+                    } rounded pixel-box text-white focus:outline-none focus:border-[#9D4EDD] focus:arcade-glow transition-all duration-300 resize-none`}
+                    placeholder="Tell us about your quest..."
+                  />
+                  {errors.message && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-400 text-sm mt-2 font-bold"
+                      style={{ textShadow: '0 0 10px rgba(239, 68, 68, 0.5)' }}
+                    >
+                      ⚠️ {errors.message}
                     </motion.p>
                   )}
                 </div>
