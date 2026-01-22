@@ -9,7 +9,7 @@ const Footer = () => {
     href: '#'
   }, {
     icon: Twitter,
-    label: 'Twitter',
+    label: 'X',
     href: '#'
   }, {
     icon: Linkedin,
@@ -50,7 +50,7 @@ const Footer = () => {
         }} transition={{
           duration: 0.5
         }}>
-            <h3 className="text-xl font-arcade text-[#9D4EDD] mb-4 arcade-glow">Sidequest PH</h3>
+            <h3 className="text-xl font-arcade text-[#9D4EDD] mb-4">Sidequest PH</h3>
             <p className="text-gray-400 leading-relaxed mb-4">
               Leveling up digital experiences for gaming and tech companies worldwide.
             </p>
@@ -124,11 +124,7 @@ const Footer = () => {
         delay: 0.3
       }} className="text-center">
           <p className="text-gray-400 flex items-center justify-center flex-wrap gap-2">
-            <span>© {currentYear} Arcade Dev Studio. All rights reserved.</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500 arcade-pulse" /> for gamers
-            </span>
+            <span>© {currentYear} Sidequest PH. All rights reserved.</span>
           </p>
         </motion.div>
       </div>
