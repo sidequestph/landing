@@ -198,7 +198,7 @@ const LeadForm = () => {
                       SUBMITTING...
                     </span>
                   ) : (
-                    'SUBMIT SCORE'
+                    'SUBMIT QUEST'
                   )}
                 </ArcadeButton>
               </form>
