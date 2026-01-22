@@ -8,46 +8,11 @@ import { useToast } from '@/components/ui/use-toast';
 
 const projects = [
   {
-    title: 'NeonQuest Gaming Portal',
-    description: 'Full-stack gaming platform with real-time multiplayer, leaderboards, and achievement system.',
-    tech: ['React', 'Node.js', 'WebSocket'],
+    title: 'St. Paul University Philippines',
+    description: 'Official website of St. Paul University Philippines, featuring course catalog, student life, and campus resources.',
+    tech: ['Wordpress', 'UI/UX Design'],
     category: 'Web',
     categoryColor: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'PixelRush Mobile Game',
-    description: 'Cross-platform arcade runner with physics engine and in-app purchases.',
-    tech: ['React Native', 'Unity', 'Firebase'],
-    category: 'Mobile',
-    categoryColor: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: 'RetroArcade Hub',
-    description: 'E-commerce platform for vintage gaming collectibles with AR preview features.',
-    tech: ['Next.js', 'Stripe', 'Three.js'],
-    category: 'Web',
-    categoryColor: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'GamerConnect Social',
-    description: 'Social networking app for gamers with live streaming and chat integration.',
-    tech: ['Flutter', 'WebRTC', 'GraphQL'],
-    category: 'Mobile',
-    categoryColor: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: 'LevelUp Studios Site',
-    description: 'Interactive portfolio showcase for indie game studio with 3D animations.',
-    tech: ['React', 'Three.js', 'GSAP'],
-    category: 'Web',
-    categoryColor: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'BossRaid Tournament App',
-    description: 'Tournament management system with brackets, scoring, and prize distribution.',
-    tech: ['React Native', 'PostgreSQL', 'Redis'],
-    category: 'Game Dev',
-    categoryColor: 'from-purple-500 to-pink-500'
   }
 ];
 
