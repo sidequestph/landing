@@ -10,25 +10,39 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Alex Thunder',
-    company: 'Lightning Games Studio',
-    quote: 'Sidequest PH took our mobile game to the next level! Their attention to detail and arcade-style polish made all the difference. Our downloads increased 300%!',
+    name: 'Jessica',
+    company: 'StartUp Logic',
+    quote: "Sidequest PH didn't just build a website; they gamified our entire user experience. Our engagement metrics skyrocketed by 200% within the first month. The team's creativity is unmatched!",
     rating: 5,
-    avatar: 'AT'
+    avatar: 'JC'
   },
   {
-    name: 'Sarah Pixel',
-    company: 'RetroTech Industries',
-    quote: 'Working with this team felt like finding a hidden power-up. They understood our gaming vision perfectly and delivered a web platform that our users absolutely love.',
+    name: 'Marcus',
+    company: 'Ironclad Logistics',
+    quote: "I was skeptical about the 'gaming' theme for a logistics company, but Sidequest PH proved me wrong. They built a robust, high-performance tracking system that feels modern and intuitive. Absolute pros.",
     rating: 5,
-    avatar: 'SP'
+    avatar: 'MT'
   },
   {
-    name: 'Mike Neon',
-    company: 'CyberPlay Entertainment',
-    quote: 'Best web development experience ever! They brought our retro gaming concept to life with stunning visuals and smooth performance. Total game changer for our business.',
+    name: 'Elena',
+    company: 'Pixel Perfect Design',
+    quote: "As a designer, I'm picky about details. Sidequest PH nailed every pixel. The animations are buttery smooth, and the mobile responsiveness is flawless. They are the cheat code to a perfect launch.",
     rating: 5,
-    avatar: 'MN'
+    avatar: 'ER'
+  },
+  {
+    name: 'David',
+    company: 'NextGen FinTech',
+    quote: 'We needed a secure, scalable web app for our fintech startup. Sidequest PH delivered a fortress. Their code is clean, documentation is thorough, and their support is legendary. Highly recommended!',
+    rating: 5,
+    avatar: 'DK'
+  },
+  {
+    name: 'Sarah',
+    company: 'The Coffee Quest',
+    quote: 'From our e-commerce shop to our loyalty app, Sidequest PH handled it all. They really understood our brand and created a digital experience that keeps our customers coming back for more. 10/10!',
+    rating: 5,
+    avatar: 'SJ'
   }
 ];
 
@@ -100,7 +114,7 @@ const Testimonials = () => {
                   
                   <div className="flex mb-4">
                     {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-[#9D4EDD] text-[#9D4EDD] arcade-glow" />
+                      <Star key={i} className="w-5 h-5 fill-[#9D4EDD] text-[#9D4EDD]" />
                     ))}
                   </div>
                   
