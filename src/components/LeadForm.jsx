@@ -8,17 +8,18 @@ import FloatingImage from '@/components/ui/FloatingImage';
 import starImg from '@/assets/images/star.png';
 import shieldImg from '@/assets/images/shield.png';
 import swordImg from '@/assets/images/sword.png';
+import controllerImg from '@/assets/images/controller.png';
 import { useToast } from '@/components/ui/use-toast';
 import { Trophy } from 'lucide-react';
 
 const LeadForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [errors, setErrors] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', interest: '', message: '' });
+  const [errors, setErrors] = useState({ name: '', email: '', interest: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const validate = () => {
-    const newErrors = { name: '', email: '' };
+    const newErrors = { name: '', email: '', interest: '' };
     let isValid = true;
 
     if (!formData.name.trim()) {
@@ -31,6 +32,11 @@ const LeadForm = () => {
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Invalid email format!';
+      isValid = false;
+    }
+
+    if (!formData.interest) {
+      newErrors.interest = 'Please select your interest!';
       isValid = false;
     }
 
@@ -71,11 +77,11 @@ const LeadForm = () => {
   };
 
   return (
-    <section id="lead-form" className="py-24 bg-gradient-to-b from-[#0A0E27] to-[#1a0f3e] relative overflow-hidden">
+    <section id="lead-form" className="py-24 bg-gradient-to-b from-[#1a0f3e] to-[#0A0E27] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
       <FloatingImage 
-        src={swordImg} 
+        src={controllerImg} 
         alt="Sword" 
         className="w-16 bottom-20 left-[15%] opacity-30 rotate-[-15deg]" 
         delay={0.8}
@@ -177,6 +183,45 @@ const LeadForm = () => {
                       style={{ textShadow: '0 0 10px rgba(239, 68, 68, 0.5)' }}
                     >
                       ⚠️ {errors.email}
+                    </motion.p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-white font-bold mb-2 text-sm tracking-wide">
+                    Interest
+                  </label>
+                  <div className="relative">
+                    <select
+                      name="interest"
+                      value={formData.interest}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 bg-[#0A0E27] border-2 ${
+                        errors.interest ? 'border-red-500' : 'border-[#9D4EDD]'
+                      } rounded pixel-box focus:outline-none focus:border-[#9D4EDD] focus:arcade-glow transition-all duration-300 appearance-none cursor-pointer ${
+                        formData.interest === '' ? 'text-gray-400' : 'text-white'
+                      }`}
+                    >
+                      <option value="" disabled className="text-gray-400 bg-[#0A0E27]">e.g Web & Mobile</option>
+                      <option value="Web" className="text-white bg-[#0A0E27]">Web</option>
+                      <option value="Mobile" className="text-white bg-[#0A0E27]">Mobile</option>
+                      <option value="Custom" className="text-white bg-[#0A0E27]">Custom</option>
+                      <option value="Web & Mobile" className="text-white bg-[#0A0E27]">Web & Mobile</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#9D4EDD]">
+                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </div>
+                  </div>
+                  {errors.interest && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-400 text-sm mt-2 font-bold"
+                      style={{ textShadow: '0 0 10px rgba(239, 68, 68, 0.5)' }}
+                    >
+                      ⚠️ {errors.interest}
                     </motion.p>
                   )}
                 </div>

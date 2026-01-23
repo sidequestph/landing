@@ -7,7 +7,8 @@ import FloatingImage from '@/components/ui/FloatingImage';
 import swordImg from '@/assets/images/sword.png';
 import shieldImg from '@/assets/images/shield.png';
 import { ExternalLink } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+import marioBoxImg from '@/assets/images/mario-box.png';
+import boltImg from '@/assets/images/bolt.png';
 
 const projects = [
   {
@@ -20,30 +21,21 @@ const projects = [
 ];
 
 const Portfolio = () => {
-  const { toast } = useToast();
-
-  const handleViewProject = (projectTitle) => {
-    toast({
-      title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
-      description: `${projectTitle} details coming soon!`,
-    });
-  };
-
   return (
-    <section className="py-24 bg-[#0A0E27] relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-[#1a0f3e] to-[#0A0E27] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
       <FloatingImage 
-        src={swordImg} 
-        alt="Sword" 
+        src={marioBoxImg} 
+        alt="Mario Box" 
         className="w-24 md:w-32 bottom-20 right-[5%] opacity-10" 
         delay={1.5}
         duration={6}
         rotation={-15}
       />
       <FloatingImage 
-        src={shieldImg} 
-        alt="Shield" 
+        src={boltImg} 
+        alt="Lightning bolt" 
         className="w-24 md:w-32 top-10 left-[5%] opacity-10 rotate-[20deg]" 
         delay={0.8}
         duration={5}
@@ -61,7 +53,7 @@ const Portfolio = () => {
           <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             ACHIEVEMENTS UNLOCKED
           </NeonText>
-          <p className="text-gray-300 text-lg">High score projects from our arcade</p>
+          <p className="text-gray-300 text-lg">Check out our latest projects and achievements!</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -89,8 +81,7 @@ const Portfolio = () => {
                       </span>
                     ))}
                   </div>
-                  <ArcadeButton 
-                    onClick={() => handleViewProject(project.title)}
+                  <ArcadeButton
                     size="small"
                     className="w-full"
                   >

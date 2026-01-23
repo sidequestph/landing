@@ -1,38 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, Heart, Facebook, X, Instagram } from 'lucide-react';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const socialLinks = [{
-    icon: Github,
-    label: 'GitHub',
-    href: '#'
-  }, {
-    icon: Twitter,
-    label: 'X',
-    href: '#'
-  }, {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    href: '#'
-  }, {
-    icon: Mail,
-    label: 'Email',
-    href: '#'
-  }];
-  const quickLinks = [{
-    name: 'Services',
-    href: '#'
-  }, {
-    name: 'Portfolio',
-    href: '#'
-  }, {
-    name: 'Pricing',
-    href: '#'
-  }, {
-    name: 'Contact',
-    href: '#'
-  }];
+  const socialLinks = [
+    {
+      icon: Facebook,
+      label: 'Facebook',
+      href: '#'
+    }, 
+    {
+      icon: Instagram,
+      label: 'Instagram',
+      href: '#'
+    },
+    {
+      icon: X,
+      label: 'X',
+      href: '#'
+    },
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      href: '#'
+    },
+    {
+      icon: Mail,
+      label: 'Email',
+      href: 'mailto:inquiry@sidequestph.com'
+    }
+  ];
+  const quickLinks = [{ name: 'Lobby', href: '#hero' },
+  { name: 'Skills', href: '#services' },
+  { name: 'Inventory', href: '#portfolio' },
+  { name: 'Item shop', href: '#pricing' },
+  { name: 'Leaderboard', href: '#testimonials' },
+  { name: 'Start Quest', href: '#contact' }];
   return <footer className="bg-[#0A0E27] border-t-4 border-[#9D4EDD] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       

@@ -4,12 +4,12 @@ import NeonText from '@/components/ui/NeonText';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Base', href: '#hero' },
+  { name: 'Lobby', href: '#hero' },
   { name: 'Skills', href: '#services' },
   { name: 'Inventory', href: '#portfolio' },
-  { name: 'Feedback', href: '#testimonials' },
   { name: 'Item shop', href: '#pricing' },
-  { name: 'Quest', href: '#contact' },
+  { name: 'Leaderboard', href: '#testimonials' },
+  { name: 'Start Quest', href: '#contact' },
 ];
 
 const Header = () => {

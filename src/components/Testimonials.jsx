@@ -44,7 +44,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#1a0f3e] to-[#0A0E27] relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-[#0A0E27] to-[#1a0f3e] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
       <FloatingImage 

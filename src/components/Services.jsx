@@ -40,17 +40,17 @@ const Services = () => {
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
       <FloatingImage 
-        src={shieldImg} 
-        alt="Shield" 
-        className="w-24 md:w-32 top-10 left-[5%] opacity-10" 
+        src={swordImg} 
+        alt="Sword" 
+        className="w-24 md:w-32 top-20 left-[5%] opacity-10" 
         delay={0.5}
         duration={5}
         rotation={15}
       />
       <FloatingImage 
-        src={swordImg} 
-        alt="Sword" 
-        className="w-24 md:w-32 bottom-20 right-[5%] opacity-10 rotate-[-15deg]" 
+        src={shieldImg} 
+        alt="Shield" 
+        className="w-24 md:w-32 top-20 right-[5%] opacity-10" 
         delay={1.2}
         duration={4}
         rotation={-10}
@@ -67,7 +67,7 @@ const Services = () => {
           <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             CHOOSE YOUR PATH
           </NeonText>
-          <p className="text-gray-300 text-lg">Choose your power-up and dominate the digital realm</p>
+          <p className="text-gray-300 text-lg">Where do we guide you in your digital journey?</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">

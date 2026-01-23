@@ -8,6 +8,8 @@ import swordImg from '@/assets/images/sword.png';
 import shieldImg from '@/assets/images/shield.png';
 import { Check, Zap } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import crystalImg from '@/assets/images/crystal.png';
+import controllerImg from '@/assets/images/controller.png';
 
 const plans = [
   {
@@ -79,16 +81,16 @@ const Pricing = () => {
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
       <FloatingImage 
-        src={swordImg} 
-        alt="Sword" 
+        src={crystalImg} 
+        alt="Crystal" 
         className="w-32 md:w-40 top-32 right-[5%] opacity-15 rotate-[-45deg]" 
         delay={1}
         duration={5}
         rotation={-10}
       />
       <FloatingImage 
-        src={shieldImg} 
-        alt="Shield" 
+        src={controllerImg} 
+        alt="Controller" 
         className="w-24 md:w-32 bottom-20 left-[5%] opacity-15 rotate-[15deg]" 
         delay={1.5}
         duration={4}
