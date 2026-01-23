@@ -11,16 +11,26 @@ const services = [
   {
     icon: Code2,
     title: 'Web Development',
-    subtitle: 'Level Up Your Web Presence',
-    description: 'Custom web applications built with cutting-edge technology. From arcade-style landing pages to complex gaming platforms, we create digital experiences that captivate and engage.',
-    features: ['React & Modern Frameworks', 'Responsive Design', 'Performance Optimization', 'SEO & Analytics']
+    subtitle: 'The Way of the Sword',
+    description: 'Construct your digital kingdom with our full-stack mastery. Whether it\'s a simple spawn point, a merchant shop, or a custom game engine, we build web solutions that level up your business.',
+    features: [
+      'Spawn Points (Landing Pages)',
+      'Guild Systems (WordPress CMS)',
+      'Item Shops (Shopify E-com)',
+      'Custom Game Engines (Web Apps)'
+    ]
   },
   {
     icon: Smartphone,
     title: 'Mobile Development',
-    subtitle: 'Master Mobile Gaming',
-    description: 'Native and cross-platform mobile apps that deliver console-quality experiences. Perfect for gaming companies and tech startups ready to dominate the mobile landscape.',
-    features: ['iOS & Android', 'Cross-Platform Solutions', 'Game Integration', 'Push Notifications']
+    subtitle: 'The Way of the Shield',
+    description: 'Equip your inventory with powerful cross-platform apps. We craft mobile tools that run on every console, helping you defeat boss-level business challenges and dominate the leaderboard.',
+    features: [
+      'Cross-Console (iOS & Android)',
+      'Boss-Level Problem Solving',
+      'Full Campaign Development',
+      'Zero-Lag Deployment'
+    ]
   }
 ];
 
@@ -55,7 +65,7 @@ const Services = () => {
           className="text-center mb-16"
         >
           <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
-            SELECT YOUR SERVICE
+            CHOOSE YOUR PATH
           </NeonText>
           <p className="text-gray-300 text-lg">Choose your power-up and dominate the digital realm</p>
         </motion.div>
