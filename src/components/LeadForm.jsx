@@ -9,28 +9,31 @@ import starImg from '@/assets/images/star.png';
 import shieldImg from '@/assets/images/shield.png';
 import swordImg from '@/assets/images/sword.png';
 import controllerImg from '@/assets/images/controller.png';
-import { useToast } from '@/components/ui/use-toast';
 import { Trophy } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
+import validator from 'validator';
+
+import {inquiryService} from '@/services/inquiry';
 
 const LeadForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', interest: '', message: '' });
-  const [errors, setErrors] = useState({ name: '', email: '', interest: '', message: '' });
+  const [formData, setFormData] = useState({ full_name: '', email: '', interest: '', message: '' });
+  const [errors, setErrors] = useState({ full_name: '', email: '', interest: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const [statusMessage, setStatusMessage] = useState({ type: '', text: '' });
 
   const validate = () => {
-    const newErrors = { name: '', email: '', interest: '' };
+    const newErrors = { full_name: '', email: '', interest: '' };
     let isValid = true;
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'Player name required!';
+    if (!formData.full_name.trim()) {
+      newErrors.full_name = 'Player name required!';
       isValid = false;
     }
 
     if (!formData.email.trim()) {
       newErrors.email = 'Email required!';
       isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!validator.isEmail(formData.email)) {
       newErrors.email = 'Invalid email format!';
       isValid = false;
     }
@@ -44,27 +47,34 @@ const LeadForm = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (validate()) {
       setIsSubmitting(true);
+      setStatusMessage({ type: '', text: '' }); // Clear previous messages
       
-      // Simulate submission
-      setTimeout(() => {
-        // Store in localStorage
-        const submissions = JSON.parse(localStorage.getItem('arcadeLeads') || '[]');
-        submissions.push({ ...formData, timestamp: new Date().toISOString() });
-        localStorage.setItem('arcadeLeads', JSON.stringify(submissions));
+      try {
+        await inquiryService.submit(formData);
 
-        toast({
-          title: "🏆 HIGH SCORE RECORDED! 🏆",
-          description: "Welcome to the arcade, player! We'll be in touch soon.",
+        setStatusMessage({
+          type: 'success',
+          text: '⭐ Request to join the quest party sent!'
         });
 
-        setFormData({ name: '', email: '' });
+        setFormData({ full_name: '', email: '', interest: '', message: '' });
+      } catch (error) {
+        setStatusMessage({
+          type: 'error',
+          text: '⚠️ ' + error.response?.data.error || 'Something went wrong. Please try again later.'
+        });
+      } finally {
         setIsSubmitting(false);
-      }, 1000);
+        // Clear message after 5 seconds
+        setTimeout(() => {
+          setStatusMessage({ type: '', text: '' });
+        }, 5000);
+      }
     }
   };
 
@@ -134,6 +144,27 @@ const LeadForm = () => {
         >
           <ArcadeCard className="border-4 border-[#9D4EDD] arcade-glow">
             <div className="p-6 md:p-12">
+              {/* Status Message */}
+              <AnimatePresence>
+                {statusMessage.text && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0, marginBottom: 0 }}
+                    animate={{ opacity: 1, height: 'auto', marginBottom: 24 }}
+                    exit={{ opacity: 0, height: 0, marginBottom: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className={`p-4 rounded text-center font-bold text-sm md:text-base border-2 ${
+                      statusMessage.type === 'success' 
+                        ? 'bg-green-900/50 border-green-500 text-green-400' 
+                        : 'bg-red-900/50 border-red-500 text-red-400'
+                    }`}>
+                      {statusMessage.text}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-white font-bold mb-2 text-xs md:text-sm tracking-wide">
@@ -141,22 +172,22 @@ const LeadForm = () => {
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="full_name"
+                    value={formData.full_name}
                     onChange={handleChange}
                     className={`w-full px-4 py-2 md:py-3 text-sm md:text-base bg-[#0A0E27] border-2 ${
-                      errors.name ? 'border-red-500' : 'border-[#9D4EDD]'
+                      errors.full_name ? 'border-red-500' : 'border-[#9D4EDD]'
                     } rounded pixel-box text-white focus:outline-none focus:border-[#9D4EDD] focus:arcade-glow transition-all duration-300`}
                     placeholder="e.g Juan De La Cruz"
                   />
-                  {errors.name && (
+                  {errors.full_name && (
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="text-red-400 text-sm mt-2 font-bold"
                       style={{ textShadow: '0 0 10px rgba(239, 68, 68, 0.5)' }}
                     >
-                      ⚠️ {errors.name}
+                      ⚠️ {errors.full_name}
                     </motion.p>
                   )}
                 </div>
