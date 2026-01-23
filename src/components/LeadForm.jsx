@@ -133,10 +133,10 @@ const LeadForm = () => {
           className="max-w-2xl mx-auto"
         >
           <ArcadeCard className="border-4 border-[#9D4EDD] arcade-glow">
-            <div className="p-8 md:p-12">
+            <div className="p-6 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-white font-bold mb-2 text-sm tracking-wide">
+                  <label className="block text-white font-bold mb-2 text-xs md:text-sm tracking-wide">
                     Full name
                   </label>
                   <input
@@ -144,7 +144,7 @@ const LeadForm = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-[#0A0E27] border-2 ${
+                    className={`w-full px-4 py-2 md:py-3 text-sm md:text-base bg-[#0A0E27] border-2 ${
                       errors.name ? 'border-red-500' : 'border-[#9D4EDD]'
                     } rounded pixel-box text-white focus:outline-none focus:border-[#9D4EDD] focus:arcade-glow transition-all duration-300`}
                     placeholder="e.g Juan De La Cruz"

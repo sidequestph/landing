@@ -64,14 +64,14 @@ const Testimonials = () => {
       <FloatingImage 
         src={shieldImg} 
         alt="Shield" 
-        className="w-20 top-20 left-[10%] opacity-20" 
+        className="w-16 md:w-20 top-20 left-[10%] opacity-20" 
         delay={0.2}
         duration={4}
       />
       <FloatingImage 
         src={swordImg} 
         alt="Sword" 
-        className="w-24 bottom-10 right-[10%] opacity-20 rotate-[30deg]" 
+        className="w-16 md:w-24 bottom-10 right-[10%] opacity-20 rotate-[30deg]" 
         delay={1.0}
         duration={5}
         rotation={20}
@@ -85,10 +85,10 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
+          <NeonText className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             PLAYER REVIEWS
           </NeonText>
-          <p className="text-gray-300 text-lg">See what our clients are saying</p>
+          <p className="text-gray-300 text-base md:text-lg">See what our clients are saying</p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto relative">
@@ -101,24 +101,24 @@ const Testimonials = () => {
               transition={{ duration: 0.5 }}
             >
               <ArcadeCard className="border-l-[5px] border-l-[#9D4EDD]">
-                <div className="p-8 md:p-12">
+                <div className="p-6 md:p-12">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#9D4EDD] to-[#3A0CA3] flex items-center justify-center mr-4 pixel-box arcade-glow">
-                      <span className="text-white font-arcade text-lg">{testimonials[currentIndex].avatar}</span>
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#9D4EDD] to-[#3A0CA3] flex items-center justify-center mr-4 pixel-box arcade-glow">
+                      <span className="text-white font-arcade text-base md:text-lg">{testimonials[currentIndex].avatar}</span>
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-lg">{testimonials[currentIndex].name}</h4>
-                      <p className="text-[#9D4EDD]">{testimonials[currentIndex].company}</p>
+                      <h4 className="text-white font-bold text-base md:text-lg">{testimonials[currentIndex].name}</h4>
+                      <p className="text-[#9D4EDD] text-sm md:text-base">{testimonials[currentIndex].company}</p>
                     </div>
                   </div>
                   
                   <div className="flex mb-4">
                     {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-[#9D4EDD] text-[#9D4EDD]" />
+                      <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-[#9D4EDD] text-[#9D4EDD]" />
                     ))}
                   </div>
                   
-                  <p className="text-gray-300 text-lg leading-relaxed italic">
+                  <p className="text-gray-300 text-base md:text-lg leading-relaxed italic">
                     "{testimonials[currentIndex].quote}"
                   </p>
                 </div>

@@ -105,10 +105,10 @@ const Pricing = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
+          <NeonText className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             CHOOSE YOUR LEVEL
           </NeonText>
-          <p className="text-gray-300 text-lg">Select the perfect plan for your quest</p>
+          <p className="text-gray-300 text-base md:text-lg">Select the perfect plan for your quest</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16 items-center">
@@ -121,19 +121,24 @@ const Pricing = () => {
               transition={{ delay: index * 0.2, duration: 0.5 }}
               className={plan.highlighted ? 'md:scale-110 md:z-10' : ''}
             >
-              <ArcadeCard className={`h-full relative ${plan.highlighted ? 'border-4 border-[#9D4EDD] arcade-glow-strong' : ''}`}>
-                <div className={`${plan.highlighted ? 'px-8 py-20' : 'p-8'} flex flex-col h-full`}>
-                  <h3 className="text-2xl font-arcade text-white mb-2 text-center">{plan.name}</h3>
-                  <p className="text-gray-400 text-center mb-6">{plan.description}</p>
+              <ArcadeCard className={`h-full relative overflow-hidden ${plan.highlighted ? 'border-4 border-[#9D4EDD] arcade-glow-strong' : ''}`}>
+                {plan.highlighted && (
+                  <div className="absolute top-6 -right-12 z-20 rotate-45 bg-[#FFD700] text-black font-bold py-1 px-12 shadow-lg text-sm border-2 border-white arcade-glow">
+                    BEST VALUE
+                  </div>
+                )}
+                <div className={`${plan.highlighted ? 'px-8 py-12' : 'p-6 md:p-8'} flex flex-col h-full`}>
+                  <h3 className="text-xl md:text-2xl font-arcade text-white mb-2 text-center">{plan.name}</h3>
+                  <p className="text-gray-400 text-sm md:text-base text-center mb-6">{plan.description}</p>
                   
                   <div className="text-center mb-8 flex flex-col items-center justify-center gap-2">
-                    <span className="text-gray-500 line-through text-lg font-arcade">{plan.originalPrice}</span>
-                    <span className="text-4xl font-bold text-[#9D4EDD]">{plan.price}</span>
+                    <span className="text-gray-500 line-through text-base md:text-lg font-arcade">{plan.originalPrice}</span>
+                    <span className="text-3xl md:text-4xl font-bold text-[#9D4EDD]">{plan.price}</span>
                   </div>
 
                   <ul className="space-y-4 mb-8 flex-grow">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-gray-300">
+                      <li key={idx} className="flex items-start text-gray-300 text-sm md:text-base">
                         <Check className="w-5 h-5 text-[#9D4EDD] mr-3 flex-shrink-0 mt-0.5 arcade-glow" />
                         <span>{feature}</span>
                       </li>

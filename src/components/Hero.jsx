@@ -139,11 +139,11 @@ const Hero = () => {
             <PixelSprite type="coin" />
           </div>
 
-          <NeonText className="text-4xl md:text-6xl lg:text-7xl font-arcade mb-6 leading-tight glitch-text" glowColor="#9D4EDD" data-text="Level Up Your Digital Game">
+          <NeonText className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-arcade mb-6 leading-tight glitch-text" glowColor="#9D4EDD" data-text="Level Up Your Digital Game">
             Level Up Your<br />Digital Game
           </NeonText>
 
-          <div className="text-lg md:text-xl lg:text-2xl text-white mb-12 max-w-3xl mx-auto font-semibold">
+          <div className="text-base md:text-lg lg:text-2xl text-white mb-12 max-w-3xl mx-auto font-semibold">
             Let's party up and finish that quest!
           </div>
 

@@ -28,7 +28,7 @@ const Portfolio = () => {
       <FloatingImage 
         src={marioBoxImg} 
         alt="Mario Box" 
-        className="w-24 md:w-32 bottom-20 right-[5%] opacity-10" 
+        className="w-16 md:w-32 bottom-20 right-[5%] opacity-10" 
         delay={1.5}
         duration={6}
         rotation={-15}
@@ -36,7 +36,7 @@ const Portfolio = () => {
       <FloatingImage 
         src={boltImg} 
         alt="Lightning bolt" 
-        className="w-24 md:w-32 top-10 left-[5%] opacity-10 rotate-[20deg]" 
+        className="w-16 md:w-32 top-10 left-[5%] opacity-10 rotate-[20deg]" 
         delay={0.8}
         duration={5}
         rotation={10}
@@ -50,10 +50,10 @@ const Portfolio = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
+          <NeonText className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             ACHIEVEMENTS UNLOCKED
           </NeonText>
-          <p className="text-gray-300 text-lg">Check out our latest projects and achievements!</p>
+          <p className="text-gray-300 text-base md:text-lg">Check out our latest projects and achievements!</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -72,8 +72,8 @@ const Portfolio = () => {
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4 flex-grow leading-relaxed">{project.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 flex-grow leading-relaxed">{project.description}</p>
                   <div className="mb-4 flex flex-wrap gap-2">
                     {project.tech.map((tech, idx) => (
                       <span key={idx} className="px-2 py-1 text-xs bg-[#1a0f3e] text-[#9D4EDD] rounded pixel-box">
