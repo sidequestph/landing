@@ -2,22 +2,35 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ArcadeCard from '@/components/ui/ArcadeCard';
 import NeonText from '@/components/ui/NeonText';
+import FloatingImage from '@/components/ui/FloatingImage';
+import swordImg from '@/assets/images/sword.png';
+import shieldImg from '@/assets/images/shield.png';
 import { Code2, Smartphone } from 'lucide-react';
 
 const services = [
   {
     icon: Code2,
     title: 'Web Development',
-    subtitle: 'Level Up Your Web Presence',
-    description: 'Custom web applications built with cutting-edge technology. From arcade-style landing pages to complex gaming platforms, we create digital experiences that captivate and engage.',
-    features: ['React & Modern Frameworks', 'Responsive Design', 'Performance Optimization', 'SEO & Analytics']
+    subtitle: 'The Way of the Sword',
+    description: 'Construct your digital kingdom with our full-stack mastery. Whether it\'s a simple spawn point, a merchant shop, or a custom game engine, we build web solutions that level up your business.',
+    features: [
+      'Spawn Points (Landing Pages)',
+      'Guild Systems (WordPress CMS)',
+      'Item Shops (Shopify E-com)',
+      'Custom Game Engines (Web Apps)'
+    ]
   },
   {
     icon: Smartphone,
     title: 'Mobile Development',
-    subtitle: 'Master Mobile Gaming',
-    description: 'Native and cross-platform mobile apps that deliver console-quality experiences. Perfect for gaming companies and tech startups ready to dominate the mobile landscape.',
-    features: ['iOS & Android', 'Cross-Platform Solutions', 'Game Integration', 'Push Notifications']
+    subtitle: 'The Way of the Shield',
+    description: 'Equip your inventory with powerful cross-platform apps. We craft mobile tools that run on every console, helping you defeat boss-level business challenges and dominate the leaderboard.',
+    features: [
+      'Cross-Console (iOS & Android)',
+      'Boss-Level Problem Solving',
+      'Full Campaign Development',
+      'Zero-Lag Deployment'
+    ]
   }
 ];
 
@@ -25,6 +38,23 @@ const Services = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-[#0A0E27] to-[#1a0f3e] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
+      
+      <FloatingImage 
+        src={swordImg} 
+        alt="Sword" 
+        className="w-24 md:w-32 top-20 left-[5%] opacity-10" 
+        delay={0.5}
+        duration={5}
+        rotation={15}
+      />
+      <FloatingImage 
+        src={shieldImg} 
+        alt="Shield" 
+        className="w-24 md:w-32 top-20 right-[5%] opacity-10" 
+        delay={1.2}
+        duration={4}
+        rotation={-10}
+      />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -35,9 +65,9 @@ const Services = () => {
           className="text-center mb-16"
         >
           <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
-            SELECT YOUR SERVICE
+            CHOOSE YOUR PATH
           </NeonText>
-          <p className="text-gray-300 text-lg">Choose your power-up and dominate the digital realm</p>
+          <p className="text-gray-300 text-lg">Where do we guide you in your digital journey?</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">

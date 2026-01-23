@@ -36,12 +36,12 @@ function App() {
             <Portfolio />
           </div>
           
-          <div id="testimonials" className="scroll-mt-20">
-            <Testimonials />
-          </div>
-          
           <div id="pricing" className="scroll-mt-20">
             <Pricing />
+          </div>
+
+          <div id="testimonials" className="scroll-mt-20">
+            <Testimonials />
           </div>
           
           <div id="contact" className="scroll-mt-20">

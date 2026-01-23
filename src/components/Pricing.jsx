@@ -3,54 +3,60 @@ import { motion } from 'framer-motion';
 import ArcadeCard from '@/components/ui/ArcadeCard';
 import ArcadeButton from '@/components/ui/ArcadeButton';
 import NeonText from '@/components/ui/NeonText';
-import { Check, Zap } from 'lucide-react';
+import FloatingImage from '@/components/ui/FloatingImage';
+import swordImg from '@/assets/images/sword.png';
+import shieldImg from '@/assets/images/shield.png';
+import { Check } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import crystalImg from '@/assets/images/crystal.png';
+import controllerImg from '@/assets/images/controller.png';
 
 const plans = [
   {
-    name: 'Starter',
-    originalPrice: '$3,999',
-    price: '$2,999',
+    name: 'Scout',
+    originalPrice: '₱40,995.00',
+    price: '₱34,995.00',
     description: 'Perfect for indie developers',
     features: [
-      'Single page application',
-      'Responsive design',
-      'Basic animations',
-      '1 month support',
-      'SEO optimization'
+      '1-5 Website Pages (Static)',
+      '1 Revision',
+      'Resource/s: Dev, QA & BA',
+      'User Acceptance Testing',
+      'Free production setup',
+      'Responsive design (Web & Mobile Android/iOS)',
+      'Website Maintenance (1 month free after turnover)'
     ],
     highlighted: false
   },
   {
-    name: 'Pro',
-    originalPrice: '$7,999',
-    price: '$5,999',
+    name: 'Adventurer',
+    originalPrice: '₱49,995.00',
+    price: '₱44,995.00',
     description: 'For growing gaming studios',
     features: [
-      'Multi-page application',
-      'Advanced animations',
-      'Custom integrations',
-      'API development',
-      '3 months support',
-      'Performance optimization',
-      'Analytics dashboard'
+      'up to 15 Website Pages (Static)',
+      '2 Revision',
+      'Resource/s: Sr. Dev, QA & BA',
+      'User Acceptance Testing',
+      'Free production setup',
+      'Responsive design (Web & Mobile Android/iOS)',
+      'Website Maintenance (1 month free after turnover)'
     ],
     highlighted: true
   },
   {
-    name: 'Ultimate',
-    originalPrice: '$15,999',
-    price: '$12,999',
+    name: 'Legend',
+    originalPrice: '₱59,995.00',
+    price: '₱54,995.00',
     description: 'Enterprise gaming solutions',
     features: [
-      'Full platform development',
-      'Mobile app included',
-      'Real-time features',
-      'Payment integration',
-      '6 months support',
-      'Custom backend',
-      'Dedicated dev team',
-      'Priority support'
+      'up to 20 Website Pages (Static)',
+      '3 Revision',
+      'Resource/s: Sr. Dev, QA & BA',
+      'User Acceptance Testing',
+      'Free production setup',
+      'Responsive design (Web & Mobile Android/iOS)',
+      'Website Maintenance (1 month free after turnover)'
     ],
     highlighted: false
   }
@@ -74,6 +80,23 @@ const Pricing = () => {
     <section className="py-24 bg-[#0A0E27] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
+      <FloatingImage 
+        src={crystalImg} 
+        alt="Crystal" 
+        className="w-32 md:w-40 top-32 right-[5%] opacity-15 rotate-[-45deg]" 
+        delay={1}
+        duration={5}
+        rotation={-10}
+      />
+      <FloatingImage 
+        src={controllerImg} 
+        alt="Controller" 
+        className="w-24 md:w-32 bottom-20 left-[5%] opacity-15 rotate-[15deg]" 
+        delay={1.5}
+        duration={4}
+        rotation={10}
+      />
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,7 +111,7 @@ const Pricing = () => {
           <p className="text-gray-300 text-lg">Select the perfect plan for your quest</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16 items-center">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -99,17 +122,7 @@ const Pricing = () => {
               className={plan.highlighted ? 'md:scale-110 md:z-10' : ''}
             >
               <ArcadeCard className={`h-full relative ${plan.highlighted ? 'border-4 border-[#9D4EDD] arcade-glow-strong' : ''}`}>
-                {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#9D4EDD] to-[#3A0CA3] rounded-full pixel-box arcade-glow">
-                    <div className="flex items-center gap-2">
-                      <Zap className="w-4 h-4 text-yellow-300" />
-                      <span className="text-white font-arcade text-xs">BEST VALUE</span>
-                      <Zap className="w-4 h-4 text-yellow-300" />
-                    </div>
-                  </div>
-                )}
-                
-                <div className="p-8 flex flex-col h-full">
+                <div className={`${plan.highlighted ? 'px-8 py-20' : 'p-8'} flex flex-col h-full`}>
                   <h3 className="text-2xl font-arcade text-white mb-2 text-center">{plan.name}</h3>
                   <p className="text-gray-400 text-center mb-6">{plan.description}</p>
                   

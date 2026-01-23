@@ -3,68 +3,45 @@ import { motion } from 'framer-motion';
 import ArcadeCard from '@/components/ui/ArcadeCard';
 import ArcadeButton from '@/components/ui/ArcadeButton';
 import NeonText from '@/components/ui/NeonText';
+import FloatingImage from '@/components/ui/FloatingImage';
+import swordImg from '@/assets/images/sword.png';
+import shieldImg from '@/assets/images/shield.png';
 import { ExternalLink } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+import marioBoxImg from '@/assets/images/mario-box.png';
+import boltImg from '@/assets/images/bolt.png';
 
 const projects = [
   {
-    title: 'NeonQuest Gaming Portal',
-    description: 'Full-stack gaming platform with real-time multiplayer, leaderboards, and achievement system.',
-    tech: ['React', 'Node.js', 'WebSocket'],
+    title: 'St. Paul University Philippines',
+    description: 'Official website of St. Paul University Philippines, featuring course catalog, student life, and campus resources.',
+    tech: ['Wordpress', 'UI/UX Design'],
     category: 'Web',
     categoryColor: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'PixelRush Mobile Game',
-    description: 'Cross-platform arcade runner with physics engine and in-app purchases.',
-    tech: ['React Native', 'Unity', 'Firebase'],
-    category: 'Mobile',
-    categoryColor: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: 'RetroArcade Hub',
-    description: 'E-commerce platform for vintage gaming collectibles with AR preview features.',
-    tech: ['Next.js', 'Stripe', 'Three.js'],
-    category: 'Web',
-    categoryColor: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'GamerConnect Social',
-    description: 'Social networking app for gamers with live streaming and chat integration.',
-    tech: ['Flutter', 'WebRTC', 'GraphQL'],
-    category: 'Mobile',
-    categoryColor: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: 'LevelUp Studios Site',
-    description: 'Interactive portfolio showcase for indie game studio with 3D animations.',
-    tech: ['React', 'Three.js', 'GSAP'],
-    category: 'Web',
-    categoryColor: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'BossRaid Tournament App',
-    description: 'Tournament management system with brackets, scoring, and prize distribution.',
-    tech: ['React Native', 'PostgreSQL', 'Redis'],
-    category: 'Game Dev',
-    categoryColor: 'from-purple-500 to-pink-500'
   }
 ];
 
 const Portfolio = () => {
-  const { toast } = useToast();
-
-  const handleViewProject = (projectTitle) => {
-    toast({
-      title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀",
-      description: `${projectTitle} details coming soon!`,
-    });
-  };
-
   return (
-    <section className="py-24 bg-[#0A0E27] relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-[#1a0f3e] to-[#0A0E27] relative overflow-hidden">
       <div className="absolute inset-0 pixel-pattern opacity-5"></div>
       
+      <FloatingImage 
+        src={marioBoxImg} 
+        alt="Mario Box" 
+        className="w-24 md:w-32 bottom-20 right-[5%] opacity-10" 
+        delay={1.5}
+        duration={6}
+        rotation={-15}
+      />
+      <FloatingImage 
+        src={boltImg} 
+        alt="Lightning bolt" 
+        className="w-24 md:w-32 top-10 left-[5%] opacity-10 rotate-[20deg]" 
+        delay={0.8}
+        duration={5}
+        rotation={10}
+      />
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,7 +53,7 @@ const Portfolio = () => {
           <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             ACHIEVEMENTS UNLOCKED
           </NeonText>
-          <p className="text-gray-300 text-lg">High score projects from our arcade</p>
+          <p className="text-gray-300 text-lg">Check out our latest projects and achievements!</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -104,8 +81,7 @@ const Portfolio = () => {
                       </span>
                     ))}
                   </div>
-                  <ArcadeButton 
-                    onClick={() => handleViewProject(project.title)}
+                  <ArcadeButton
                     size="small"
                     className="w-full"
                   >
