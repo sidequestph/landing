@@ -42,7 +42,7 @@ const Services = () => {
       <FloatingImage 
         src={swordImg} 
         alt="Sword" 
-        className="w-24 md:w-32 top-20 left-[5%] opacity-10" 
+        className="w-16 md:w-32 top-20 left-[5%] opacity-10" 
         delay={0.5}
         duration={5}
         rotation={15}
@@ -50,7 +50,7 @@ const Services = () => {
       <FloatingImage 
         src={shieldImg} 
         alt="Shield" 
-        className="w-24 md:w-32 top-20 right-[5%] opacity-10" 
+        className="w-16 md:w-32 top-20 right-[5%] opacity-10" 
         delay={1.2}
         duration={4}
         rotation={-10}
@@ -64,10 +64,10 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <NeonText className="text-3xl md:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
+          <NeonText className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-arcade mb-4" glowColor="#9D4EDD">
             CHOOSE YOUR PATH
           </NeonText>
-          <p className="text-gray-300 text-lg">Where do we guide you in your digital journey?</p>
+          <p className="text-gray-300 text-base md:text-lg">Where do we guide you in your digital journey?</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -80,11 +80,11 @@ const Services = () => {
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
               <ArcadeCard className="h-full">
-                <div className="flex flex-col items-center text-center p-8">
-                  <div className="w-20 h-20 mb-6 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#9D4EDD] to-[#3A0CA3] arcade-glow">
-                    <service.icon className="w-10 h-10 text-white" />
+                <div className="flex flex-col items-center text-center p-6 md:p-8">
+                  <div className="w-16 h-16 md:w-20 md:h-20 mb-6 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#9D4EDD] to-[#3A0CA3] arcade-glow">
+                    <service.icon className="w-8 h-8 md:w-10 md:h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-arcade text-white mb-2">{service.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-arcade text-white mb-2">{service.title}</h3>
                   <p className="text-[#9D4EDD] font-bold mb-4">{service.subtitle}</p>
                   <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
                   <ul className="space-y-2 w-full">

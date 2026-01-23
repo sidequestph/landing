@@ -101,7 +101,7 @@ const Header = () => {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + index * 0.1 }}
-                  className="text-2xl font-arcade text-white hover:text-[#9D4EDD] transition-colors relative"
+                  className="text-xl font-arcade text-white hover:text-[#9D4EDD] transition-colors relative"
                 >
                   {link.name}
                 </motion.a>
