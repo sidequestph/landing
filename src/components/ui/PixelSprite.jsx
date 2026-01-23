@@ -45,7 +45,6 @@ const PixelSprite = ({ type = 'coin' }) => {
         repeat: Infinity,
         ease: 'easeInOut'
       }}
-      className="arcade-glow"
     >
       {sprites[type]}
     </motion.div>

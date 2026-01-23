@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-const NeonText = ({ children, className, glowColor = '#9D4EDD' }) => {
+const NeonText = ({ children, className, glowColor = '#9D4EDD', ...props }) => {
   return (
     <h2
       className={cn('neon-text', className)}
@@ -13,6 +13,7 @@ const NeonText = ({ children, className, glowColor = '#9D4EDD' }) => {
           0 0 40px ${glowColor}
         `
       }}
+      {...props}
     >
       {children}
     </h2>
