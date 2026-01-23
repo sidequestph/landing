@@ -6,7 +6,7 @@ import NeonText from '@/components/ui/NeonText';
 import FloatingImage from '@/components/ui/FloatingImage';
 import swordImg from '@/assets/images/sword.png';
 import shieldImg from '@/assets/images/shield.png';
-import { Check, Zap } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import crystalImg from '@/assets/images/crystal.png';
 import controllerImg from '@/assets/images/controller.png';
@@ -111,7 +111,7 @@ const Pricing = () => {
           <p className="text-gray-300 text-lg">Select the perfect plan for your quest</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16 items-center">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -122,17 +122,7 @@ const Pricing = () => {
               className={plan.highlighted ? 'md:scale-110 md:z-10' : ''}
             >
               <ArcadeCard className={`h-full relative ${plan.highlighted ? 'border-4 border-[#9D4EDD] arcade-glow-strong' : ''}`}>
-                {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#9D4EDD] to-[#3A0CA3] rounded-full pixel-box arcade-glow">
-                    <div className="flex items-center gap-2">
-                      <Zap className="w-4 h-4 text-yellow-300" />
-                      <span className="text-white font-arcade text-xs">BEST VALUE</span>
-                      <Zap className="w-4 h-4 text-yellow-300" />
-                    </div>
-                  </div>
-                )}
-                
-                <div className="p-8 flex flex-col h-full">
+                <div className={`${plan.highlighted ? 'px-8 py-20' : 'p-8'} flex flex-col h-full`}>
                   <h3 className="text-2xl font-arcade text-white mb-2 text-center">{plan.name}</h3>
                   <p className="text-gray-400 text-center mb-6">{plan.description}</p>
                   
