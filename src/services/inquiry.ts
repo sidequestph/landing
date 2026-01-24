@@ -77,6 +77,7 @@ export const inquiryService = {
     return post<InquiryResponse>('/inquiry', enrichedPayload, {
       headers: {
         'Origin': 'https://sidequestph.com',
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
