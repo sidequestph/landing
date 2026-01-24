@@ -74,6 +74,12 @@ export const inquiryService = {
       platform,
     };
 
-    return post<InquiryResponse>('/inquiry', enrichedPayload);
+    return post<InquiryResponse>('/inquiry', enrichedPayload, {
+      headers: {
+        'Origin': 'https://sidequestph.com',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    });
   }
 };
