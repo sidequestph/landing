@@ -12,11 +12,11 @@ import boltImg from '@/assets/images/bolt.png';
 
 const projects = [
   {
-    title: 'St. Paul University Philippines',
-    description: 'Official website of St. Paul University Philippines, featuring course catalog, student life, and campus resources.',
-    tech: ['Wordpress', 'UI/UX Design'],
-    category: 'Web',
-    categoryColor: 'from-blue-500 to-cyan-500'
+    title: 'L&C Grocery Store',
+    description: 'A mobile application to help owner and staffs manage the grocery store operations by providing tools like point-of-sale, receipt management and store pricing',
+    tech: ['Flutter'],
+    category: 'Mobile App',
+    categoryColor: 'from-cyan-500 to-blue-500'
   }
 ];
 
