@@ -82,8 +82,8 @@ const ComingSoon = () => {
             COMING SOON
           </NeonText>
           
-          <p className="text-xl md:text-2xl text-gray-300 font-press-start mb-12 max-w-2xl mx-auto leading-relaxed">
-            We are leveling up our base. Get ready for a new game!
+          <p className="text-sm md:text-lg text-gray-300 font-press-start mb-12 max-w-4xl mx-auto leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+            We are leveling up our base. Get ready to elevate your business!
           </p>
 
           {/* Loading Bar Animation */}

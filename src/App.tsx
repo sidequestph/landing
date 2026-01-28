@@ -16,8 +16,8 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Sidequest PH - Level Up Your Digital Game</title>
-        <meta name="description" content="Web & Mobile Development for Gaming & Tech Companies. Premium arcade-style digital solutions to level up your business." />
+        <title>SideQuest Philippines - Elevate your digital game to the next level</title>
+        <meta name="description" content="SideQuest Philippines is a web & mobile development company that specializes in creating premium arcade-style digital solutions to help gaming & tech companies level up their business." />
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
       </Helmet>
       
