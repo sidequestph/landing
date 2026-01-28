@@ -45,7 +45,7 @@ const Header = () => {
         <div className="relative z-50">
           <a href="#hero" onClick={() => handleNavClick('#hero')}>
             <NeonText className="text-xl md:text-2xl font-arcade cursor-pointer" glowColor="#9D4EDD">
-              Sidequest PH
+              SideQuest Philippines
             </NeonText>
           </a>
         </div>

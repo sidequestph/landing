@@ -28,7 +28,7 @@ const Footer = () => {
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:inquiry@sidequestph.com'
+      href: 'mailto:hello@sidequestph.com'
     }
   ];
   const quickLinks = [{ name: 'Lobby', href: '#hero' },
@@ -54,12 +54,9 @@ const Footer = () => {
         }} transition={{
           duration: 0.5
         }}>
-            <h3 className="text-xl font-arcade text-[#9D4EDD] mb-4">Sidequest PH</h3>
+            <h3 className="text-xl font-arcade text-[#9D4EDD] mb-4">SideQuest Philippines</h3>
             <p className="text-gray-400 leading-relaxed mb-4">
-              Leveling up digital experiences for gaming and tech companies worldwide.
-            </p>
-            <p className="text-gray-500 text-sm italic font-arcade">
-              "GAME OVER? NEVER!"
+              Elevate your digital game to the next level
             </p>
           </motion.div>
 
@@ -128,7 +125,7 @@ const Footer = () => {
         delay: 0.3
       }} className="text-center">
           <p className="text-gray-400 flex items-center justify-center flex-wrap gap-2">
-            <span>© {currentYear} Sidequest PH. All rights reserved.</span>
+            <span>© {currentYear} SideQuest Philippines. All rights reserved.</span>
           </p>
         </motion.div>
       </div>
